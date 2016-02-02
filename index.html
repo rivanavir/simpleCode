@@ -1,0 +1,533 @@
+<!-- TenancyPlan Page -->
+<!-- HTML -->
+<article class="clearfix">
+	<div class="content-top-wrap clearfix">
+		<div class="large-4 large-offset-1 medium-5 columns">
+			<h2><% if SubTitle %>$SubTitle<% else %>$Title<% end_if %></h2>
+		</div>
+		<div class="large-1 large-offset-5 medium-2 medium-offset-5 columns arrow-wrap">
+			<% include NextPrevArrows %>
+		</div>
+	</div>
+	<div class="columns large-7 large-offset-1 img-wrap default-img">
+		<a class="img-link tenancy-img">
+			<img id="mapImg" src="$ThemeDir/images/longbay-tenancy-default.png" data-default="$ThemeDir/images/longbay-tenancy-default.png" alt="" usemap="#map"/>
+			<map name="map" id="map">
+				<area href="#" data-id="building1" state="b1" data-href="$ThemeDir/images/longbay-tenancy-build-1.png" class="area" shape="poly" coords="204,72,183,72,184,174,84,175,85,191,41,190,41,111,9,111,9,34,183,35,204,27,246,27,229,72" />
+				<area href="#" data-id="building2" state="b2" data-href="$ThemeDir/images/longbay-tenancy-build-2.png" class="area" shape="poly" coords="271,28,328,50,339,28,378,46,355,104,257,64" />
+				<area href="#" data-id="building3" state="b3" data-href="$ThemeDir/images/longbay-tenancy-build-3.png" class="area" shape="poly" coords="219,172,245,183,272,117,302,131,308,118,343,133,300,234,218,198" />
+				<area href="#" data-id="building4" state="b4" data-href="$ThemeDir/images/longbay-tenancy-build-4.png" class="area" shape="poly" coords="402,148,439,163,395,272,359,256" />
+				<area href="#" data-id="building5" state="b5" data-href="$ThemeDir/images/longbay-tenancy-build-5.png" class="area" shape="poly" coords="429,92,488,118,575,117,576,179,569,195,413,129" />
+			</map>
+		</a>
+		<div class="medium-10 large-offset-0 medium-offset-1 level-wrap building1">
+			<div class="medium-6 columns">
+				<p class="build-ttl">Building 1 <br>Lower level</p>
+				<img src="$ThemeDir/images/building-1-img-1.png" alt="">
+			</div>
+			<div class="medium-6 columns left">
+				<p class="build-ttl text-left">Building 1 <br>Upper level</p>
+				<img src="$ThemeDir/images/building-1-img-2.png" alt="">
+			</div>
+		</div>
+		<div class="large-5 medium-6 large-offset-0 medium-offset-1 level-wrap building2">
+			<div class="build-cont-wrap">
+				<p class="build-ttl">Building 2 <br>Lower level</p>
+				<div class="img-layer">
+					<img class="" src="$ThemeDir/images/building-2-img-1.png" alt="">
+				</div>
+			</div>
+			<div class="build-cont-wrap">
+				<p class="build-ttl">Building 2 <br>Upper level</p>
+				<div class="img-layer">
+					<img class="" src="$ThemeDir/images/building-2-img-2.png" alt="">
+				</div>
+			</div>
+		</div>
+		<div class="large-5 medium-6 large-offset-0 medium-offset-1 level-wrap building3">
+			<div class="medium-12">
+				<p class="build-ttl text-left">Building 3 <br>Ground level</p>
+				<img src="$ThemeDir/images/building-3-img-1.png" alt="">
+			</div>
+		</div>
+		<div class="large-9 medium-8 large-offset-0 medium-offset-1 level-wrap building4">
+			<div class="medium-4 columns">
+				<p class="build-ttl text-left">Building 4 <br>Ground level</p>
+				<img src="$ThemeDir/images/building-4-img-1.png" alt="">
+			</div>
+			<div class="medium-4 columns">
+				<p class="build-ttl text-left">Building 4 <br>Level one</p>
+				<img src="$ThemeDir/images/building-4-img-2.png" alt="">
+			</div>
+			<div class="medium-4 columns left">
+				<p class="build-ttl text-left">Building 4 <br>Level two</p>
+				<img src="$ThemeDir/images/building-4-img-3.png" alt="">
+			</div>
+		</div>
+		<div class="large-5 medium-6 large-offset-0 medium-offset-1 level-wrap building5">
+			<div class="medium-12">
+				<p class="build-ttl text-left">Building 5 <br>Ground level</p>
+				<img src="$ThemeDir/images/building-5-img-1.png" alt="">
+			</div>
+		</div>
+		<div class="large-5 medium-6 large-offset-0 medium-offset-1 pdf-link-wrap">
+			<a class="pdf-link" href="#" data-reveal-id="pdfModal">Download a PDF of the Long Bay Village Brochure</a>
+		</div>
+	</div>
+	<div class="columns large-3 large-offset-0 medium-10 medium-offset-1 left">
+		<p class="tenancy-key">
+			For Lease <i class="fa fa-stop"></i><br />
+			Leased <i class="fa fa-stop leased"></i>
+		</p>
+	 
+		<dl class="accordion" data-accordion>
+			<dd class="accordion-navigation">
+				<a href="#building1"><i class="fa fa-caret-right"></i>&nbsp;Building 1</a>
+				<div id="building1" class="content">
+					<div class="first-layer">
+						<h4>Lower Level</h4>
+						<% include TenancyHeading %>
+						<% loop getTenancies(1,Lower) %>
+						<% include TenancyDetails %>
+						<% end_loop %>
+					</div>
+					<div class="last-layer">
+						<h4>Upper Level</h4>
+						<% include TenancyHeading %>
+						<% loop getTenancies(1,Upper) %>
+						<% include TenancyDetails %>
+						<% end_loop %>
+					</div>
+				</div>
+			</dd>
+			<dd class="accordion-navigation">
+				<a href="#building2"><i class="fa fa-caret-right"></i>&nbsp;Building 2</a>
+				<div id="building2" class="content">
+					<div class="first-layer">
+						<h4>Lower Level</h4>
+						<% include TenancyHeading %>
+						<% loop getTenancies(2,Lower) %>
+						<% include TenancyDetails %>
+						<% end_loop %>
+					</div>
+					<div class="last-layer">
+						<h4>Upper Level</h4>
+						<% include TenancyHeading %>
+						<% loop getTenancies(2,Upper) %>
+						<% include TenancyDetails %>
+						<% end_loop %>
+					</div>
+				</div>
+			</dd>
+			<dd class="accordion-navigation">
+				<a href="#building3"><i class="fa fa-caret-right"></i>&nbsp;Building 3</a>
+				<div id="building3" class="content">
+					<div class="last-layer">
+						<h4>Ground Level</h4>
+						<% include TenancyHeading %>
+						<% loop getTenancies(3,Ground) %>
+						<% include TenancyDetails %>
+						<% end_loop %>
+					</div>
+				</div>
+			</dd>
+			<dd class="accordion-navigation">
+				<a href="#building4"><i class="fa fa-caret-right"></i>&nbsp;Building 4</a>
+				<div id="building4" class="content">
+					<div class="first-layer">
+						<h4>Ground Level</h4>
+						<% include TenancyHeading %>
+						<% loop getTenancies(4,Ground) %>
+						<% include TenancyDetails %>
+						<% end_loop %>
+					</div>					
+					<div class="mid-layer">
+						<h4>Level One</h4>
+						<% include TenancyHeading %>
+						<% loop getTenancies(4,Lower) %>
+						<% include TenancyDetails %>
+						<% end_loop %>
+					</div>
+					<div class="last-layer">
+						<h4>Level Two</h4>
+						<% include TenancyHeading %>
+						<% loop getTenancies(4,Upper) %>
+						<% include TenancyDetails %>
+						<% end_loop %>
+					</div>
+				</div>
+			</dd>
+			<dd class="accordion-navigation">
+				<a href="#building5"><i class="fa fa-caret-right"></i>&nbsp;Building 5</a>
+				<div id="building5" class="content">
+					<div class="last-layer">
+						<h4>Ground Level</h4>
+						<% include TenancyHeading %>
+						<% loop getTenancies(5,Ground) %>
+						<% include TenancyDetails %>
+						<% end_loop %>
+					</div>
+				</div>
+			</dd>
+		</dl>
+	</div>
+</article>
+
+
+<!-- SCSS -->
+.TenancyPlanPage {
+
+	.tenancy-key {
+		text-align: right;
+		font-size: rem-calc(10);
+		line-height: 2;
+		font-weight: 600;
+		text-transform: uppercase;
+		color: $tenancy-font-color;
+	}
+	.fa-stop {
+		font-size: rem-calc(12);
+		color: #8dc73f;
+		&.leased {
+			color: #fa0723;
+		}
+	}
+	.accordion {
+		.accordion-navigation {
+			border-top: 3px solid #bca989;
+			a {
+				font-weight: 700;
+				text-transform: uppercase;
+				font-size: rem-calc(12);
+				line-height: 30px;
+				color: $tenancy-font-color;
+				.fa{
+					margin-right: 5px;
+					font-size: rem-calc(15);
+					-webkit-transition: all 0.2s ease;
+					-moz-transition: all 0.2s ease;
+					-ms-transition: all 0.2s ease;
+					-o-transition: all 0.2s ease;
+					transition: all 0.2s ease;
+				}
+			}
+			&.active {
+				.fa-caret-right {
+					-webkit-transform: rotate(90deg);
+					-moz-transform: rotate(90deg);
+					-ms-transform: rotate(90deg);
+					-o-transform: rotate(90deg);
+					transform: rotate(90deg)}
+			}
+			&:last-child{
+				border-bottom: 3px solid #bca989;
+			}
+			.content{
+				padding: 0;
+
+				display: block;
+				max-height: 0;            
+				overflow-y: auto;
+				-moz-transition: ease 0.4s all;
+				-o-transition: ease 0.4s all;
+				-webkit-transition: ease 0.4s all;
+				transition: ease 0.4s all;
+				.first-layer, .mid-layer{
+					padding: rem-calc(5 0 25);
+				}
+				.last-layer{
+					padding: rem-calc(5 0);
+					border-top: 1px solid #bca989;
+
+				}
+				.last-layer, .mid-layer {
+					.tenancy-details:last-child {
+						border-bottom: 0 solid transparent;
+					}
+				}
+				&.active {
+					max-height: 100%;
+					-moz-transition: ease 0.4s all;
+					-o-transition: ease 0.4s all;
+					-webkit-transition: ease 0.4s all;
+					transition: ease 0.4s all;
+					-moz-transition-delay: 0.4s;
+					-o-transition-delay: 0.4s;
+					-webkit-transition-delay: 0.4s;
+					transition-delay: 0.4s;                                        
+				}
+			}
+
+		}
+		h4 {
+			font-family: $body-font-family;
+			text-transform: uppercase;
+			font-size: rem-calc(12);
+			color: $tenancy-font-color;
+			margin-bottom: 5px;
+		}
+		.tenancy-heading {
+			text-transform: uppercase;
+			font-size: rem-calc(10);
+			line-height: 2;
+			font-weight: bold;
+			color: $tenancy-font-color;
+			margin-bottom: 5px;
+		}
+		.tenancy-details {
+			line-height: 2;
+			border-bottom: 1px solid #bca989;
+			font-size: rem-calc(12);
+			color: $tenancy-font-color;
+		}
+	}
+	.img-wrap{
+		margin-bottom: 20px;
+		display: block;
+		widows: 100%;
+		height: 100%;
+		padding-top: rem-calc(30);
+		padding-right: rem-calc(15);
+		padding-left: rem-calc(15);
+		a{
+			&.img-link{
+				display: block;
+				position: relative;
+				text-align: center;
+				&:before{display: none;}
+				@media #{$large-up} {
+					text-align: left;
+					&:hover{
+						.fa{
+							color: white;
+						}
+					}
+				}
+				img{
+					width: auto;
+				}
+				#map{
+					width: 100%;
+					height: 100%;
+					area{
+						outline: 0 solid transparent;
+					}
+				}
+			}
+		}
+		.pdf-link-wrap{
+			border-top: 1px solid $tenancy-font-color;
+			padding: rem-calc(10 0 0 34);
+			position: relative;
+			@media #{$large-up} {
+				top: -35px;
+			}
+			a.pdf-link{
+				color: $tenancy-font-color;
+				font-size: rem-calc(10);
+				text-transform: uppercase;
+				font-weight: 600;
+				position: relative;
+				display: block;
+				&:after{
+					position: absolute;
+					content: '';
+					display: block;
+					width: 21px;
+					height: 26px;
+					background: url('../images/pdf-icon.png') left top no-repeat;
+					top: 50%;
+					margin-top: -13px;
+					left:-34px;
+				}
+			}
+		}
+		.level-wrap{
+			display: none;
+			position: relative;
+			text-align: center;
+			@media #{$medium-up} {
+				top: -20px;
+			}
+			@media #{$large-up} {
+				top: -50px;
+			}
+			@media #{$small-only} {
+				>div{
+					padding: rem-calc(25 15);
+					text-align: center;
+				}
+			}
+			&.actBuild {
+				display: block;
+				img{
+					-webkit-animation:scaleImg .7s normal;
+					-moz-animation:scaleImg .7s normal;
+					-ms-animation:scaleImg .7s normal;
+					-o-animation:scaleImg .7s normal;
+					animation:scaleImg .7s normal;
+				}
+			}
+			@-webkit-keyframes scaleImg{
+				0% {transform:scale(0);}
+				80%{transform:scale(1.1);}
+				100%{transform:scale(1);}
+			}
+			@-moz-keyframes scaleImg{
+				0% {transform:scale(0);}
+				80%{transform:scale(1.1);}
+				100%{transform:scale(1);}
+			}
+			@-o-keyframes scaleImg{
+				0% {transform:scale(0);}
+				80%{transform:scale(1.1);}
+				100%{transform:scale(1);}
+			}
+			@-ms-keyframes scaleImg{
+				0% {transform:scale(0);}
+				80%{transform:scale(1.1);}
+				100%{transform:scale(1);}
+			}
+			@keyframes scaleImg{
+				0% {transform:scale(0);}
+				80%{transform:scale(1.1);}
+				100%{transform:scale(1);}
+			}
+			&:after{
+				content: '';
+				display: table;
+				clear: both;
+			}
+			.build-ttl{
+				font-size: rem-calc(12.5);
+				text-transform: uppercase;
+				line-height: 1.2;
+				font-weight: 600;
+				margin-bottom: 10px;
+				color: $tenancy-font-color;
+				text-align: left;
+			}
+			&.building1{
+				>div{
+					padding: rem-calc(25 15);
+					&:first-child{
+						border-bottom:1px solid $tenancy-font-color;
+						@media #{$medium-up} {
+							border-right:1px solid $tenancy-font-color;
+							border-bottom:0 solid transparent;
+						}
+					}
+				}
+			}
+			&.building2{
+				@media #{$large-up} {
+					top: -70px;
+				}
+				.build-cont-wrap{
+					padding: rem-calc(25 0);
+					@media #{$medium-up} {
+						display: -webkit-box;
+						display: -moz-box;
+						display: -ms-flexbox;
+						display: -webkit-flex;
+						display: flex;
+					}
+					p.build-ttl{
+						margin-bottom: 0;
+					}
+					.img-layer{
+						@media #{$medium-up} {
+							flex-grow:2;
+							text-align: center;
+							text-align: right;
+						}
+					}
+					&:first-child{
+						border-bottom:1px solid $tenancy-font-color;
+						@media #{$medium-up} {
+							padding-top: 0;
+						}
+						p.build-ttl{
+							align-self:flex-end;
+						}
+					}
+					&:last-child{
+						@media #{$medium-up} {
+							padding-bottom: 0;
+						}
+					}
+				}
+			}
+			&.building3{
+				@media #{$medium-up} {
+					text-align: right;
+				}
+				p.build-ttl{
+					margin-bottom: 0;
+				}
+			}
+			&.building4{
+				@media #{$large-up} {
+					top: -40px;
+					margin-bottom: 15px;
+				}
+				>div{
+					padding-bottom: rem-calc(15);
+					border-bottom:1px solid $tenancy-font-color;
+					@media #{$medium-up} {
+						border-right:1px solid $tenancy-font-color;
+						border-bottom:0 solid transparent;
+						text-align: right;
+					}
+					&:last-child{
+						border-right: 0;
+						border-bottom: 0;
+					}
+				}
+				p.build-ttl{
+					margin-bottom: 0;
+				}
+			}
+			&.building5{
+				@media #{$medium-up} {
+					text-align: right;
+				}
+			}
+		}
+	}
+}
+
+<!-- JS -->
+function changeArea(el) {
+	var data = $(el).data('href');
+	var src = $('.img-link img').attr('src', data);
+}
+function changeClass(elem, id) {
+	var activePar = elem.parents('.accordion-navigation');
+	$('.img-wrap').removeClassRegex(/^building/);
+	if (activePar.hasClass('active')) {
+		$('.img-wrap').removeClass('default-img').addClass(id);
+		$('.img-wrap').find('.level-wrap').removeClass('actBuild');
+		$('.img-wrap').find("." + id).addClass('actBuild');
+	} else {
+		$('.img-wrap').addClass('default-img');
+		$('.img-wrap').removeClassRegex(/^building/);
+		var defSrc = $('.img-link img').data('default');
+		$('.img-link img').attr('src', defSrc);
+		$('.img-wrap').find('.level-wrap').removeClass('actBuild');
+	}
+}
+function init() {
+	$('#map .area').on('click', function (e) {
+		e.preventDefault();
+		changeArea(this);
+		var areaData = '#' + $(this).data('id');
+		$('.accordion *').removeClass('active');
+		$('.accordion a').attr("aria-expanded", false);
+		$('.accordion').find(areaData).addClass('active').prev('a').attr("aria-expanded", true).parents('.accordion-navigation').addClass('active');
+
+		var elem = $(areaData);
+		var dataId = $(this).data('id');
+		changeClass(elem, dataId);
+	});
+}
